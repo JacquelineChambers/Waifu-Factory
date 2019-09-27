@@ -7,3 +7,5 @@ sci-fi hallway taken from - https://www.wallpaperup.com/58363/space_monitors_lin
 
 I made the 3d model of the girl from scratch in blender using the image of the girl as the reference 
 for the 3d model.
+
+The artist who drew the piece was ocono who has since deactivated her deviantart account.
