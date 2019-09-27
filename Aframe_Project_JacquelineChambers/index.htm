@@ -11,11 +11,12 @@
     <body>
         
       <a-scene shadow="type: pcfsoft">
+    
           <a-light  light=
                    "type: point;
                    castShadow: true;
                    intensity: 1;
-                   light.penumbra: 1;
+                   light.penumbra: 0.1;
                     light.shadowRadius: 0.5
                     "
                    color =  "#4ce7e5"
@@ -43,6 +44,7 @@
                    "type: ambient;
                    castShadow: true;
                    intensity: 0.01;
+                    light.penumbra: 1;
                    light.decay: 0.5;
                     light.shadowRadius: 0.5
                     "
@@ -52,6 +54,7 @@
                    "type: ambient;
                    castShadow: true;
                    intensity: 0.01;
+                    light.penumbra: 1;
                    light.decay: 0.5;
                     light.shadowRadius: 0.5
                     "
@@ -73,7 +76,11 @@
             <a-obj-model gltf-model = "#girl"  mtl = "assignment_1.mtl"
             position = "-20 -2 11.8"
            
-                animation__1 = "property:      position; to: -5 -2 13; dur: 7000; easing: linear; loop:false"
+                animation__1 = "property:      
+                                position; 
+                                to: -5 -2 13; 
+                                dur: 7000; 
+                                easing: linear; loop:false"
                          
                 animation__2 = "property:                   rotation;
                                 delay: 7000;
@@ -81,12 +88,83 @@
                                 dur: 4000;
                                 easing: linear"
                  shadow = "receive:true"               ></a-obj-model>
-      <a-cylinder id = "stand" position="-5.15 -4.8 12.7" rotation="0 0 0" radius="2" height="1" color="white" shadow= "receive:true"></a-cylinder>
+      <a-cylinder id = "stand" position="-5.15 -4.81 12.7" rotation="0 0 0" radius="2" height="1" color="white" shadow= "receive:true"></a-cylinder>
+      <a-cylinder id = "stand-2" position="-5.15 -20 12.7" rotation="0 0 0" radius="2" height="19" color="black" shadow= "receive:true"></a-cylinder>
       <a-cylinder id = "floor" position="-5.15 -5.5 13" rotation="0 0 0" radius="13" height="0.5" color="#181818" shadow= "receive:true"></a-cylinder>
       <a-box id = "2d-img-girl"  position="-16 -0.8 11.8" rotation="0 85 0" width="5" height="7.4" depth = "10"  src = "girl.png" shadow= "receive:true" sound="src: url(Klaypex_ft._GRETA_-_Robot_Love.mp3); autoplay: true"></a-box>
         <a-box id = "frame box"  position="-17 -0.8 11.8" rotation="0 85 0" width="10" height="12" depth = "10"  color = "black" shadow= "receive:true" ></a-box>
       <a-box id = "runway" position="-10.15 -4.8 12.4" rotation="0 -5 0" width="8" height="0" depth = "3" color= "white" shadow= "receive:true"></a-box>
-        
+      <a-entity id = "left-hand-1 sphere" geometry = "primitive: sphere"             material = "color: white" 
+                position="-10 -4.8 22" 
+                animation =   "property:components.material.material.color;    
+                 type: color; 
+                 to: black; 
+                 loop: true; 
+                 dur: 1500;
+                 easing: easeInOutSine"></a-entity>
+        <a-entity id = "right-hand-1 sphere"               geometry = "primitive: sphere"           material = "color: white" 
+                position="-10 -4.8 4" 
+                animation =   "property:components.material.material.color;    
+                 type: color; 
+                 to: black; 
+                 loop: true; 
+                 dur: 1500;
+                 easing: easeInOutSine"></a-entity>
+    <a-entity id = "left-hand-2 sphere" 
+                geometry = "primitive: sphere"   material = "color: black" 
+                position="-4 -4.8 25" 
+                animation =   "property:components.material.material.color;    
+                 type: color; 
+                 to: white; 
+                 loop: true; 
+                 dur: 1500;
+                 easing: easeInOutSine"></a-entity>
+     <a-entity  id = "right-hand-2 sphere" 
+                geometry = "primitive: sphere"   material = "color: black" 
+                position="-4 -4.8 3" 
+                animation =   "property:components.material.material.color;    
+                 type: color; 
+                 to: white; 
+                 loop: true; 
+                 dur: 1500;
+                 easing: easeInOutSine"></a-entity>
+    <a-entity   id = "left-hand-3 sphere"
+                geometry = "primitive: sphere"   material = "color: white" 
+                position="2 -4.8 22" 
+                animation =   "property:components.material.material.color;    
+                 type: color; 
+                 to: black; 
+                 loop: true; 
+                 dur: 1500;
+                 easing: easeInOutSine"></a-entity>
+    <a-entity   id = "right-hand-3 sphere"
+                geometry = "primitive: sphere"   material = "color: white" 
+                position="2 -4.8  5" 
+                animation =   "property:components.material.material.color;    
+                 type: color; 
+                 to: black; 
+                 loop: true; 
+                 dur: 1500;
+                 easing: easeInOutSine"></a-entity>
+    <a-entity   id = "left-hand-4 sphere"
+                geometry = "primitive: sphere"   material = "color: black" 
+                position="5 -4.8 17" 
+                animation =   "property:components.material.material.color;    
+                 type: color; 
+                 to: white; 
+                 loop: true; 
+                 dur: 1500;
+                 easing: easeInOutSine"></a-entity>
+    <a-entity   id = "right-hand-4 sphere"
+                geometry = "primitive: sphere"   material = "color: black" 
+                position="5 -4.8 10" 
+                animation =   "property:components.material.material.color;    
+                 type: color; 
+                 to: white; 
+                 loop: true; 
+                 dur: 1500;
+                 easing: easeInOutSine"></a-entity>
+    
     </a-scene>
         
     </body>
