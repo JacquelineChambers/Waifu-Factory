@@ -6,31 +6,34 @@
         <title>Waifu Factory</title>
         <link rel="stylesheet" type="text/css" href="main.css">
         <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
+        <script src="https://unpkg.com/aframe-event-set-component@5.0.0/dist/aframe-event-set-component.min.js"></script>
+        <script src="//cdn.rawgit.com/donmccurdy/aframe-physics-system/v4.0.1/dist/aframe-physics-system.min.js"></script>
+       
+
     </head>
     
     <body>
         
       <a-scene shadow="type: pcfsoft">
     
-          <a-light  light=
+          <a-light  id = "light_1" light=
                    "type: point;
                    castShadow: true;
                    intensity: 1;
                    light.penumbra: 0.1;
-                    light.shadowRadius: 0.5
-                    "
+                    light.shadowRadius: 0.5"
                    color =  "#4ce7e5"
                    position = "5 10 12"  ></a-light>
-           <a-light  light=
+           <a-light id = "light_2"  light=
                    "type: ambient;
                    castShadow: true;
                    intensity: 0.1;
                    light.penumbra: 1;
-                    light.shadowRadius: 0.5
+                    light.shadowRadius: 0.5 
                     "
                    color =  "#4ce7e5"
                    position = "5 10 12"  ></a-light>
-            <a-light  light=
+            <a-light  id = "light_3"     light=
                    "type: ambient;
                    castShadow: true;
                    intensity: 0.01;
@@ -40,7 +43,7 @@
                     "
                    color =  "#4ce7e5"
                    position = "5 10 12"  ></a-light>
-          <a-light  light=
+          <a-light  id = "light_4"  light=
                    "type: ambient;
                    castShadow: true;
                    intensity: 0.01;
@@ -50,7 +53,7 @@
                     "
                    color =  "#4ce7e5"
                    position = "5 10 12"  ></a-light>
-           <a-light  light=
+           <a-light id = "light_5"  light=
                    "type: ambient;
                    castShadow: true;
                    intensity: 0.01;
@@ -64,14 +67,23 @@
             position="0 0 -1"
             geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03"
             material="color: black; shader: flat">
-  </a-entity>
+        </a-entity>
           <a-sky id = "scifi-hallway" radius = "100" src = "scifi-hallway.jpg"></a-sky>
+       <a-entity  >
+
+        <a-camera id="camera" position = "2 0 14" ><a-cursor></a-cursor></a-camera>
+          </a-entity>
           
-        <a-camera id="camera" position = "2 0 14" ></a-camera>
-          <a-assets>
+        
+<a-assets>
+        
         <img id="girl-ref" src="girl.png">
+        <img id = "DefaultLight" src = "DefaultLight.png">
+        <img id = "RedLight" src = "RedLight.png">
+        <img id = "GreenLight" src = "GreenLight.png">
+        <img id = "WhiteLight" src = "WhiteLight.png">
         <a-asset-item id= "girl" src = "assignment_1.glb"></a-asset-item>
-          </a-assets>
+</a-assets>
            
             <a-obj-model gltf-model = "#girl"  mtl = "assignment_1.mtl"
             position = "-20 -2 11.8"
@@ -87,14 +99,18 @@
                                 to:0 360 0; loop: true; 
                                 dur: 4000;
                                 easing: linear"
-                 shadow = "receive:true"               ></a-obj-model>
-      <a-cylinder id = "stand" position="-5.15 -4.81 12.7" rotation="0 0 0" radius="2" height="1" color="white" shadow= "receive:true"></a-cylinder>
+                 shadow = "receive:true"                ></a-obj-model>
+          
+      <a-cylinder id = "stand" position="-5.15 -4.81 12.7" rotation="0 0 0" radius="2" height="1" color="white" 
+                   animation__tarcol = "_target:#left-hand-1sphere; attribute: position; to: -5.15 -4.81 12.7; dur: 500"
+                  animation__mouseleave = "_event:mouseleave; color: white" 
+                  shadow= "receive:true" ></a-cylinder>
       <a-cylinder id = "stand-2" position="-5.15 -20 12.7" rotation="0 0 0" radius="2" height="19" color="black" shadow= "receive:true"></a-cylinder>
       <a-cylinder id = "floor" position="-5.15 -5.5 13" rotation="0 0 0" radius="13" height="0.5" color="#181818" shadow= "receive:true"></a-cylinder>
       <a-box id = "2d-img-girl"  position="-16 -0.8 11.8" rotation="0 85 0" width="5" height="7.4" depth = "10"  src = "girl.png" shadow= "receive:true" sound="src: url(Klaypex_ft._GRETA_-_Robot_Love.mp3); autoplay: true"></a-box>
         <a-box id = "frame box"  position="-17 -0.8 11.8" rotation="0 85 0" width="10" height="12" depth = "10"  color = "black" shadow= "receive:true" ></a-box>
       <a-box id = "runway" position="-10.15 -4.8 12.4" rotation="0 -5 0" width="8" height="0" depth = "3" color= "white" shadow= "receive:true"></a-box>
-      <a-entity id = "left-hand-1 sphere" geometry = "primitive: sphere"             material = "color: white" 
+      <a-entity id = "left-hand-1sphere" geometry = "primitive: sphere"             material = "color: white" 
                 position="-10 -4.8 22" 
                 animation =   "property:components.material.material.color;    
                  type: color; 
@@ -102,7 +118,7 @@
                  loop: true; 
                  dur: 1500;
                  easing: easeInOutSine"></a-entity>
-        <a-entity id = "right-hand-1 sphere"               geometry = "primitive: sphere"           material = "color: white" 
+        <a-entity id = "right-hand-1sphere"               geometry = "primitive: sphere"           material = "color: white" 
                 position="-10 -4.8 4" 
                 animation =   "property:components.material.material.color;    
                  type: color; 
@@ -110,7 +126,7 @@
                  loop: true; 
                  dur: 1500;
                  easing: easeInOutSine"></a-entity>
-    <a-entity id = "left-hand-2 sphere" 
+    <a-entity id = "left-hand-2sphere" 
                 geometry = "primitive: sphere"   material = "color: black" 
                 position="-4 -4.8 25" 
                 animation =   "property:components.material.material.color;    
@@ -119,7 +135,7 @@
                  loop: true; 
                  dur: 1500;
                  easing: easeInOutSine"></a-entity>
-     <a-entity  id = "right-hand-2 sphere" 
+     <a-entity  id = "right-hand-2sphere" 
                 geometry = "primitive: sphere"   material = "color: black" 
                 position="-4 -4.8 3" 
                 animation =   "property:components.material.material.color;    
@@ -128,7 +144,7 @@
                  loop: true; 
                  dur: 1500;
                  easing: easeInOutSine"></a-entity>
-    <a-entity   id = "left-hand-3 sphere"
+    <a-entity   id = "left-hand-3sphere"
                 geometry = "primitive: sphere"   material = "color: white" 
                 position="2 -4.8 22" 
                 animation =   "property:components.material.material.color;    
@@ -146,7 +162,7 @@
                  loop: true; 
                  dur: 1500;
                  easing: easeInOutSine"></a-entity>
-    <a-entity   id = "left-hand-4 sphere"
+    <a-entity   id = "left-hand-4sphere"
                 geometry = "primitive: sphere"   material = "color: black" 
                 position="5 -4.8 17" 
                 animation =   "property:components.material.material.color;    
@@ -155,7 +171,7 @@
                  loop: true; 
                  dur: 1500;
                  easing: easeInOutSine"></a-entity>
-    <a-entity   id = "right-hand-4 sphere"
+    <a-entity   id = "right-hand-4sphere"
                 geometry = "primitive: sphere"   material = "color: black" 
                 position="5 -4.8 10" 
                 animation =   "property:components.material.material.color;    
@@ -164,6 +180,34 @@
                  loop: true; 
                  dur: 1500;
                  easing: easeInOutSine"></a-entity>
+        <a-curvedimage id = "DefaultLight" src = "DefaultLight.png" position= "4 5.5 20" theta-length = "200" rotation = "0 250 0" height="4" radius = "7"
+        
+        event-set__tarcol1 = "_event:mouseenter; _target:#light_1; light.color: #4ce7e5"
+        event-set__tarcol2 = "_event:mouseenter; _target:#light_2; light.color: #4ce7e5"
+        event-set__tarcol3 = "_event:mouseenter; _target:#light_3; light.color: #4ce7e5"
+        event-set__tarcol4 = "_event:mouseenter; _target:#light_4; light.color: #4ce7e5"
+        event-set__tarcol5 = "_event:mouseenter; _target:#light_5; light.color: #4ce7e5"></a-curvedimage>
+        <a-curvedimage id = "RedLight" src = "RedLight.png" position= "3.15 2.2 20" theta-length = "200" rotation = "0 250 0" height="4" radius = "7"
+        
+        event-set__tarcol1 = "_event:mouseenter; _target:#light_1; light.color: red"
+        event-set__tarcol2 = "_event:mouseenter; _target:#light_2; light.color: red"
+        event-set__tarcol3 = "_event:mouseenter; _target:#light_3; light.color: red"
+        event-set__tarcol4 = "_event:mouseenter; _target:#light_4; light.color: red"
+        event-set__tarcol5 = "_event:mouseenter; _target:#light_5; light.color: red"></a-curvedimage>
+        <a-curvedimage id = "GreenLight" src = "GreenLight.png" position= "3.15 -1 20" theta-length = "200" rotation = "0 250 0" height="4" radius = "7"
+        
+        event-set__tarcol1 = "_event:mouseenter; _target:#light_1; light.color: green"
+        event-set__tarcol2 = "_event:mouseenter; _target:#light_2; light.color: green"
+        event-set__tarcol3 = "_event:mouseenter; _target:#light_3; light.color: green"
+        event-set__tarcol4 = "_event:mouseenter; _target:#light_4; light.color: green"
+        event-set__tarcol5 = "_event:mouseenter; _target:#light_5; light.color: green"></a-curvedimage>
+        <a-curvedimage id = "WhiteLight" src = "WhiteLight.png" position= "3.15 -4.5 20" theta-length = "200" rotation = "0 250 0" height="4" radius = "7"
+        
+        event-set__tarcol1 = "_event:mouseenter; _target:#light_1; light.color: white"
+        event-set__tarcol2 = "_event:mouseenter; _target:#light_2; light.color: white"
+        event-set__tarcol3 = "_event:mouseenter; _target:#light_3; light.color: white"
+        event-set__tarcol4 = "_event:mouseenter; _target:#light_4; light.color: white"
+        event-set__tarcol5 = "_event:mouseenter; _target:#light_5; light.color: white"></a-curvedimage>
     
     </a-scene>
         
