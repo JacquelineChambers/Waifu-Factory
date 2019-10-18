@@ -101,8 +101,14 @@
                  shadow = "receive:true"                ></a-obj-model>
           
       <a-cylinder id = "stand" position="-5.15 -4.81 12.7" rotation="0 0 0" radius="2" height="1" color="white" 
-                   event-set__tarmov = "_target:#left-hand-1sphere; attribute: position; to: -5.15 -4.81 12.7; dur: 500"
-                  animation__mouseleave = "_event:mouseleave; color: white" 
+                   event-set__tarmov1 = "_event:mouseenter; _target:#left-hand-1sphere;  position: -1 -4.81 12.7"
+                  event-set__tarmov2 = "_event:mouseleave; _target:#left-hand-1sphere;  position: -10 -4.8 22 _event:mouseenter"
+                   event-set__tarmov3 = "_event:mouseenter; _target:#right-hand-1sphere;  position: 0 -4.81 12.7"
+                  event-set__tarmov5 = "_event:mouseleave;_target:#right-hand-1sphere;  position: -10 -4.8 4"
+                   event-set__tarmov6 = "_event:mouseenter; _target:#left-hand-2sphere;  position: 2 -4.81 12.7"
+                  event-set__tarmov7 = "_event:mouseleave; _target:#left-hand-2sphere;  position: -4 -4.8 25"
+                  event-set__tarmov8 = "_event:mouseenter; _target:#right-hand-2sphere;  position: 4 -4.81 12.7"
+                  event-set__tarmov9 = "_event:mouseleave; _target:#right-hand-2sphere;  position: -4 -4.8 3"
                   shadow= "receive:true" ></a-cylinder>
       <a-cylinder id = "stand-2" position="-5.15 -20 12.7" rotation="0 0 0" radius="2" height="19" color="black" shadow= "receive:true"></a-cylinder>
       <a-cylinder id = "floor" position="-5.15 -5.5 13" rotation="0 0 0" radius="13" height="0.5" color="#181818" shadow= "receive:true"></a-cylinder>

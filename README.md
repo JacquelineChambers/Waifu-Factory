@@ -9,3 +9,7 @@ I made the 3d model of the girl from scratch in blender using the image of the g
 for the 3d model.
 
 The artist who drew the piece was ocono who has since deactivated her deviantart account.
+
+Hover over each of the Light labels to change the light color.
+
+Hover over the center stage to make the spheres move to the center and move off the stage to make them return to their previous location.
