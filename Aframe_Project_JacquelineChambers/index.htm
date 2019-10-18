@@ -8,8 +8,7 @@
         <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
         <script src="https://unpkg.com/aframe-event-set-component@5.0.0/dist/aframe-event-set-component.min.js"></script>
         <script src="//cdn.rawgit.com/donmccurdy/aframe-physics-system/v4.0.1/dist/aframe-physics-system.min.js"></script>
-       
-
+        <script src = "click.js"></script>
     </head>
     
     <body>
@@ -69,9 +68,9 @@
             material="color: black; shader: flat">
         </a-entity>
           <a-sky id = "scifi-hallway" radius = "100" src = "scifi-hallway.jpg"></a-sky>
-       <a-entity  >
+       <a-entity position = "11 0.5 5" rotation = "-7 122 0" >
 
-        <a-camera id="camera" position = "2 0 14" ><a-cursor></a-cursor></a-camera>
+        <a-camera id="camera"  ><a-cursor></a-cursor></a-camera>
           </a-entity>
           
         
@@ -84,7 +83,7 @@
         <img id = "WhiteLight" src = "WhiteLight.png">
         <a-asset-item id= "girl" src = "assignment_1.glb"></a-asset-item>
 </a-assets>
-           
+    
             <a-obj-model gltf-model = "#girl"  mtl = "assignment_1.mtl"
             position = "-20 -2 11.8"
            
@@ -102,7 +101,7 @@
                  shadow = "receive:true"                ></a-obj-model>
           
       <a-cylinder id = "stand" position="-5.15 -4.81 12.7" rotation="0 0 0" radius="2" height="1" color="white" 
-                   animation__tarcol = "_target:#left-hand-1sphere; attribute: position; to: -5.15 -4.81 12.7; dur: 500"
+                   event-set__tarmov = "_target:#left-hand-1sphere; attribute: position; to: -5.15 -4.81 12.7; dur: 500"
                   animation__mouseleave = "_event:mouseleave; color: white" 
                   shadow= "receive:true" ></a-cylinder>
       <a-cylinder id = "stand-2" position="-5.15 -20 12.7" rotation="0 0 0" radius="2" height="19" color="black" shadow= "receive:true"></a-cylinder>
@@ -134,7 +133,8 @@
                  to: white; 
                  loop: true; 
                  dur: 1500;
-                 easing: easeInOutSine"></a-entity>
+                 easing: easeInOutSine"
+               ></a-entity>
      <a-entity  id = "right-hand-2sphere" 
                 geometry = "primitive: sphere"   material = "color: black" 
                 position="-4 -4.8 3" 
@@ -143,7 +143,8 @@
                  to: white; 
                  loop: true; 
                  dur: 1500;
-                 easing: easeInOutSine"></a-entity>
+                 easing: easeInOutSine"
+               ></a-entity>
     <a-entity   id = "left-hand-3sphere"
                 geometry = "primitive: sphere"   material = "color: white" 
                 position="2 -4.8 22" 
