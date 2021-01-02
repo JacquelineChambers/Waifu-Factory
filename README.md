@@ -1,4 +1,4 @@
-https://jacquelinechambers.github.io/Waifu-Factory.github.io/Aframe_Project_JacquelineChambers/index.html
+https://jacquelinechambers.github.io/Waifu-Factory.github.io/Aframe_Project_JacquelineChambers/index.htm
 # Waifu-Factory
 ![](Aframe_Project_JacquelineChambers/waifufactory.PNG)
 credits: 
